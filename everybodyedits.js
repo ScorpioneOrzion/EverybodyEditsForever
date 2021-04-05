@@ -1,5 +1,5 @@
-import WorldClass from './worldData/world.js';
-import playerClass from './playerData/player.js';
+import WorldClass from './worldData/worldClass.js';
+import PlayerClass from './playerData/playerClass.js';
 
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');

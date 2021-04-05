@@ -1,5 +1,5 @@
-import BlockClass from './block.js';
-import ChunkClass from './chunk.js';
+import BlockClass from './blockClass.js';
+import ChunkClass from './chunkClass.js';
 
 export default class {
   /** @type {Map<string,ChunkClass>} */
@@ -34,5 +34,12 @@ export default class {
     if ((x >= 0) && (x < this.width)
       && (y >= 0) && (y < this.height)) return this.#chunks.get(`${x << 4},${y << 4}`).getBlock(x, y, layer);
     return undefined;
+  }
+
+  draw(playerViewX, playerViewY, playerViewW, playerViewH) {
+    const startX = Math.max(0, playerViewX) << 4
+    const startY = Math.max(0, playerViewY) << 4
+    const endX = Math.min(this.width, playerViewX + playerViewW) << 4
+    const endY = Math.min(this.height, playerViewY + playerViewH) << 4
   }
 }

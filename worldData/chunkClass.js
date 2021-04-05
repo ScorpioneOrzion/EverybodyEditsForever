@@ -1,4 +1,4 @@
-import BlockClass from './block.js';
+import BlockClass from './blockClass.js';
 
 export default class {
   /** @type {Map<string,BlockClass>} */
@@ -31,5 +31,11 @@ export default class {
     if ((x >= this.x) && (x < this.x + this.w)
       && (y >= this.y) && (y < this.y + this.h)) { return this.#block.get(`${x},${y},${layer}`); }
     return undefined;
+  }
+
+  drawChunk() {
+    for (const [key, block] of this.#block) {
+      block.draw(...key.split(','))
+    }
   }
 }
