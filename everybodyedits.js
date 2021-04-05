@@ -1,0 +1,27 @@
+/* eslint-disable no-unused-vars,no-bitwise,no-plusplus */
+/* global window, document, requestAnimationFrame */
+/* eslint linebreak-style: ["error", "windows"] */
+import WorldClass from './worldData/world';
+import playerClass from './playerData/player';
+
+const canvas = document.getElementsByTagName('canvas')[0];
+const ctx = canvas.getContext('2d');
+const world = new WorldClass(100, 100);
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function loop() {
+  requestAnimationFrame(loop);
+  draw();
+}
+
+window.addEventListener('resize', resize);
+resize();
+loop();
