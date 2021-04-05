@@ -1,8 +1,7 @@
 export default class {
-  /** @param {number} id @param {number} state @param {String} img */
-  constructor(id, state, img) {
-    this.id = Number(id);
+  /** @param {String} id @param {number} state */
+  constructor(id, state) {
+    this.id = String(id);
     this.state = Number(state);
-    this.img = String(img);
   }
 }

@@ -13,8 +13,8 @@ export default class {
 
     for (let xBlock = 0; xBlock < w; xBlock++) {
       for (let yBlock = 0; yBlock < h; yBlock++) {
-        this.#block.set(`${xBlock},${yBlock},0`, new BlockClass(0, 0, 'air.img'));
-        this.#block.set(`${xBlock},${yBlock},1`, new BlockClass(0, 0, 'air.img'));
+        this.#block.set(`${xBlock},${yBlock},0`, new BlockClass('air', 0));
+        this.#block.set(`${xBlock},${yBlock},1`, new BlockClass('air', 0));
       }
     }
   }
