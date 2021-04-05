@@ -1,5 +1,5 @@
-import BlockClass from './block';
-import ChunkClass from './chunk';
+import BlockClass from './block.js';
+import ChunkClass from './chunk.js';
 
 export default class {
   /** @type {Map<string,ChunkClass>} */

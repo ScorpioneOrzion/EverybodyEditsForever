@@ -1,4 +1,4 @@
-import BlockClass from './block';
+import BlockClass from './block.js';
 
 export default class {
   /** @type {Map<string,BlockClass>} */
