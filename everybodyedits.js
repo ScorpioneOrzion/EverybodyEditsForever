@@ -1,6 +1,10 @@
 import WorldClass from './worldData/worldClass.js';
 import PlayerClass from './playerData/playerClass.js';
 
+const images = window[window.randomString].images
+delete window[window.randomString]
+delete window.randomString
+
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');
 const world = new WorldClass(100, 100);

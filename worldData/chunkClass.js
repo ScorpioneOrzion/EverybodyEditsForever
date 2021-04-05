@@ -33,9 +33,11 @@ export default class {
     return undefined;
   }
 
-  drawChunk() {
+  /** @param {number} x @param {number} y @param {CanvasRenderingContext2D} ctx */
+  drawChunk(x, y, ctx) {
     for (const [key, block] of this.#block) {
-      block.draw(...key.split(','))
+      const keys = key.split(',')
+      block.draw(keys[0] - x, keys[1] - y, ctx)
     }
   }
 }

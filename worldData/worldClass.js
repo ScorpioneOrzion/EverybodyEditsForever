@@ -26,20 +26,27 @@ export default class {
   setBlock(x, y, layer, block) {
     if ((block instanceof BlockClass)
       && (x >= 0) && (x < this.width)
-      && (y >= 0) && (y < this.height)) this.#chunks.get(`${x << 4},${y << 4}`).setBlock(x, y, layer, block);
+      && (y >= 0) && (y < this.height)) this.#chunks.get(`${x >> 4},${y >> 4}`).setBlock(x, y, layer, block);
   }
 
   /** @param {number} x @param {number} y @param {number} layer @return {BlockClass | undefined} */
   getBlock(x, y, layer) {
     if ((x >= 0) && (x < this.width)
-      && (y >= 0) && (y < this.height)) return this.#chunks.get(`${x << 4},${y << 4}`).getBlock(x, y, layer);
+      && (y >= 0) && (y < this.height)) return this.#chunks.get(`${x >> 4},${y >> 4}`).getBlock(x, y, layer);
     return undefined;
   }
 
-  draw(playerViewX, playerViewY, playerViewW, playerViewH) {
-    const startX = Math.max(0, playerViewX) << 4
-    const startY = Math.max(0, playerViewY) << 4
-    const endX = Math.min(this.width, playerViewX + playerViewW) << 4
-    const endY = Math.min(this.height, playerViewY + playerViewH) << 4
+  /** @param {number} playerViewX @param {number} playerViewY @param {number} playerViewW @param {number} playerViewH @param {CanvasRenderingContext2D} ctx */
+  draw(playerViewX, playerViewY, playerViewW, playerViewH, ctx) {
+    const startX = Math.max(0, playerViewX) >> 4
+    const startY = Math.max(0, playerViewY) >> 4
+    const endX = Math.min(this.width, playerViewX + playerViewW) >> 4
+    const endY = Math.min(this.height, playerViewY + playerViewH) >> 4
+
+    for (let x = startX; x < endX + 1; x++) {
+      for (let y = startY; y < endY + 1; y++) {
+        this.#chunks.get(`${x},${y}`).drawChunk((x << 4) - playerViewX, (y << 4) - playerViewY, ctx)
+      }
+    }
   }
 }
