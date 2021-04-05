@@ -1,7 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-bitwise */
-/* eslint linebreak-style: ["error", "windows"] */
-
 import BlockClass from './block';
 import ChunkClass from './chunk';
 
