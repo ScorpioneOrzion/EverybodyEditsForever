@@ -12,7 +12,7 @@ export default class {
       })
     ).then(
       valueMap => valueMap.map(({ value, storeString }) => {
-        return { value: value.text(), storeString }
+        return { value: value.json(), storeString }
       })
     ).then(
       valueMap => valueMap.map(({ value, storeString }) => {
