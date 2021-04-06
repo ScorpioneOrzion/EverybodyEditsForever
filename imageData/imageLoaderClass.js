@@ -8,15 +8,11 @@ export default class {
   loadJsonGroup(files) {
     return Promise.all(
       files.map(({ fileName, storeString }) => {
-        return {
-          value: fetch(fileName), storeString
-        }
+        return { value: fetch(fileName), storeString }
       })
     ).then(
       valueMap => valueMap.map(({ value, storeString }) => {
-        return {
-          value: value.text(), storeString
-        }
+        return { value: value.text(), storeString }
       })
     ).then(
       valueMap => valueMap.map(({ value, storeString }) => {

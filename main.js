@@ -1,10 +1,8 @@
 import imageLoader from "./imageData/imageLoaderClass.js"
 
 const images = new imageLoader()
-const randomString = generateRandomString()
-window.randomString = randomString
 
-images.loadJsonGroup().then(images.loadImages).then(() => {
+images.loadJsonGroup([]).then(() => {
   const script = document.createElement('script')
   script.src = "everybodyedits.js"
   script.type = "module"
@@ -12,8 +10,6 @@ images.loadJsonGroup().then(images.loadImages).then(() => {
   document.head.append(script)
 })
 
-function generateRandomString() {
-  return "EveryBody" + Array(20).fill().reduce(string => string + "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random())], "")
-}
-
+const randomString = "EveryBody" + Array(20).fill().reduce(string => string + "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random())], "")
+window.randomString = randomString
 window[randomString] = { images }
