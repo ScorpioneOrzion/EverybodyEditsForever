@@ -1,5 +1,5 @@
-import WorldClass from './worldData/worldClass.js';
-import PlayerClass from './playerData/playerClass.js';
+import WorldClass from './Classes/worldClass.js';
+import PlayerClass from './Classes/playerClass.js';
 
 const images = window[window.randomString].images;
 delete window[window.randomString];
