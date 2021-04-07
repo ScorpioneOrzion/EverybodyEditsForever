@@ -24,8 +24,7 @@ export default class {
 
   /** @param {number} x @param {number} y @param {number} layer @param {BlockClass} block */
   setBlock(x, y, layer, block) {
-    if ((block instanceof BlockClass)
-      && (x >= 0) && (x < this.width)
+    if ((block instanceof BlockClass) && (x >= 0) && (x < this.width)
       && (y >= 0) && (y < this.height)) this.#chunks.get(`${x >> 4},${y >> 4}`).setBlock(x, y, layer, block);
   }
 

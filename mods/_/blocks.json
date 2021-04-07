@@ -1,0 +1,15 @@
+{
+  "air": {
+    "sprite": "air.png",
+    "hFrames": 1,
+    "vFrames": 1,
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "frame": 0,
+        "solid": false
+      }
+    ]
+  }
+}

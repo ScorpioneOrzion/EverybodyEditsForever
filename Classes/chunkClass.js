@@ -1,7 +1,7 @@
 import BlockClass from './blockClass.js';
 
 export default class {
-  /** @type {Map<string,BlockClass>} */
+  /** @type {Map<string,BlockClass|null>} */
   #block = new Map()
 
   /** @param {number} x @param {number} y @param {number} w @param {number} h */
@@ -13,8 +13,8 @@ export default class {
 
     for (let xBlock = 0; xBlock < w; xBlock++) {
       for (let yBlock = 0; yBlock < h; yBlock++) {
-        this.#block.set(`${xBlock},${yBlock},0`, new BlockClass('air', 0));
-        this.#block.set(`${xBlock},${yBlock},1`, new BlockClass('air', 0));
+        this.#block.set(`${xBlock},${yBlock},0`, null);
+        this.#block.set(`${xBlock},${yBlock},1`, null);
       }
     }
   }

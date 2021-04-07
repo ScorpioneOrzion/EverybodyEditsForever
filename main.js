@@ -1,6 +1,7 @@
-import imageLoader from "./imageData/imageLoaderClass.js"
+import imageHandelerClass from "./Classes/imageHandelerClass.js"
 
-const images = new imageLoader();
+/** @type {imageHandelerClass} */
+const images = new imageHandelerClass();
 
 function loadMain() {
   const script = document.createElement('script');
@@ -12,10 +13,12 @@ function loadMain() {
 
 fetch("./mods/modList.json").then(value => value.json()).then(json =>
   images.loadJsonGroup(
-    Object.keys(json).map(key => json[key])
+    Object.keys(json).map(key => {
+      return { storeString: key, fileName: "./mods/" + key + "/blocks.json" }
+    })
   ).then(loadMain)
 ).catch(loadMain)
 
-const randomString = "EveryBody" + String.fromCodePoint([...Array(20)].map(() => Math.floor(48 + 74 * Math.random())));
+const randomString = "EveryBody" + String.fromCodePoint(...[...Array(20)].map(() => Math.floor(48 + 74 * Math.random())));
 window.randomString = randomString;
 window[randomString] = { images };

@@ -4,6 +4,8 @@ import PlayerClass from './Classes/playerClass.js';
 const images = window[window.randomString].images;
 delete window[window.randomString];
 delete window.randomString;
+images.loadImages()
+console.log(images)
 
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');
