@@ -32,6 +32,7 @@ function resize() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   world.draw(0, 0, window.innerWidth, window.innerHeight, ctx);
+  // ctx.fillRect(x, y, w, h)
 }
 
 function loop() {
