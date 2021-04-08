@@ -7,7 +7,6 @@ export default class Mod {
       this.id = id
       this.state = state
       this.imageObject = mod.getBlock(id)
-
     }
   }
 

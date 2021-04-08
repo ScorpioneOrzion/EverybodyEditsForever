@@ -15,7 +15,6 @@ export default class {
     this.name = name
     for (const key in json) {
       this.#blocks.set(key, new imageClass(json[key].width, json[key].height, json[key].states, this.name))
-      console.log(key)
     }
   }
 

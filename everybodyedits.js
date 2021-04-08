@@ -12,7 +12,7 @@ images.loadImages()
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');
 const world = new WorldClass(100, 100);
-const basicGrey = new BlockClass('greyBasic', 0, images.getMod('_'))
+const basicGrey = new BlockClass('grey', 0, images.getMod('_'))
 
 for (let i = 0; i < 100; i++) {
   world.setBlock(i, 0, 0, basicGrey)
@@ -31,7 +31,7 @@ function resize() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // world.draw(0, 0, window.innerWidth, window.innerHeight, ctx);
+  world.draw(0, 0, window.innerWidth, window.innerHeight, ctx);
 }
 
 function loop() {
