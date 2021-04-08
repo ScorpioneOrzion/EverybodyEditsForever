@@ -1,6 +1,6 @@
 import modClass from "./modClass.js"
 
-export default class {
+export default class ImageHandeler {
   /** @type {Map<string,modClass>} */
   #mods = new Map()
   /** @type {Map<string,JSON>} */

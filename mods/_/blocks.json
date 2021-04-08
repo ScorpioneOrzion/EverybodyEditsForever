@@ -1,14 +1,111 @@
 {
   "air": {
-    "sprite": "air.png",
-    "hFrames": 1,
-    "vFrames": 1,
     "width": 16,
     "height": 16,
     "states": [
       {
-        "frame": 0,
+        "sprite": "air.png",
         "solid": false
+      }
+    ]
+  },
+  "white": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "white.png",
+        "solid": true
+      }
+    ]
+  },
+  "grey": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "grey.png",
+        "solid": true
+      }
+    ]
+  },
+  "black": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "black.png",
+        "solid": true
+      }
+    ]
+  },
+  "red": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "red.png",
+        "solid": true
+      }
+    ]
+  },
+  "orange": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "orange.png",
+        "solid": true
+      }
+    ]
+  },
+  "yellow": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "yellow.png",
+        "solid": true
+      }
+    ]
+  },
+  "green": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "green.png",
+        "solid": true
+      }
+    ]
+  },
+  "cyan": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "cyan.png",
+        "solid": true
+      }
+    ]
+  },
+  "blue": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "blue.png",
+        "solid": true
+      }
+    ]
+  },
+  "purple": {
+    "width": 16,
+    "height": 16,
+    "states": [
+      {
+        "sprite": "purple.png",
+        "solid": true
       }
     ]
   }
