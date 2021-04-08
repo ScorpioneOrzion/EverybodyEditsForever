@@ -1,14 +1,4 @@
 {
-  "air": {
-    "width": 16,
-    "height": 16,
-    "states": [
-      {
-        "sprite": "air.png",
-        "solid": false
-      }
-    ]
-  },
   "white": {
     "width": 16,
     "height": 16,
