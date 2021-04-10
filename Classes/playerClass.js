@@ -1,18 +1,9 @@
 export default class Player {
   /** @param {string} smiley */
   constructor(smiley) {
-    this.position = {
-      x: 0,
-      y: 0
-    };
-    this.velocity = {
-      x: 0,
-      y: 0
-    };
-    this.acceleration = {
-      x: 0,
-      y: 0
-    };
+    this.position = { x: 0, y: 0 };
+    this.velocity = { x: 0, y: 0 };
+    this.acceleration = { x: 0, y: 0 };
     this.smiley = smiley;
   }
 

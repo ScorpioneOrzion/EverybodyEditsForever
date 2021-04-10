@@ -4,7 +4,7 @@ export default class Image {
     this.width = width
     this.height = height
     this.states = states
-    this.image.src = `./mods/${name}/${states[0].sprite}`
+    this.image.src = `./Sprites/${states[0].sprite}`
     this.image.width = width
     this.image.height = height
   }

@@ -12,7 +12,8 @@ images.loadImages()
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');
 const world = new WorldClass(100, 100);
-const basicGrey = new BlockClass('grey', 0, images.getMod('_'))
+const player = new PlayerClass("");
+const basicGrey = new BlockClass('grey', 0, images.getMod('_'));
 
 for (let i = 0; i < 100; i++) {
   world.setBlock(i, 0, 0, basicGrey)
@@ -29,10 +30,16 @@ function resize() {
   canvas.height = window.innerHeight;
 }
 
+ctx.fillStyle = "#000"
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   world.draw(0, 0, window.innerWidth, window.innerHeight, ctx);
-  // ctx.fillRect(x, y, w, h)
+  ctx.fillRect(0, 0, window.innerWidth, 0)
+  ctx.fillRect(0, 0, 0, window.innerHeight)
+  // ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+  // ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+  // need to complete player first
 }
 
 function loop() {
