@@ -1,4 +1,4 @@
-import imageClass from "./image.js"
+import image from "./image.js"
 
 /**
  * @typedef JSONObject
@@ -7,14 +7,14 @@ import imageClass from "./image.js"
  * @property {Object<string,number|boolean|string>[]} states
  */
 
-export default class {
-  /** @type {Map<string, imageClass>} */
+export default class Mod {
+  /** @type {Map<string, image>} */
   #blocks = new Map()
   /** @param {string} name @param {Object<string,JSONObject>} json */
   constructor(name, json) {
     this.name = name
     for (const key in json) {
-      this.#blocks.set(key, new imageClass(json[key].width, json[key].height, json[key].states, this.name))
+      this.#blocks.set(key, new image(json[key].width, json[key].height, json[key].states))
     }
   }
 

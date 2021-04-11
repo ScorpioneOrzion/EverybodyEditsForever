@@ -1,4 +1,4 @@
-import imageHandelerClass from "./Classes/imageHandelerClass.js"
+import imageHandelerClass from "./classes/imageHandeler.js"
 
 /** @type {imageHandelerClass} */
 const images = new imageHandelerClass();

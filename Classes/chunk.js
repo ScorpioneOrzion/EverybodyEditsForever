@@ -31,7 +31,7 @@ export default class Chunk {
       && (x >= this.x) && (x < this.x + this.w)
       && (y >= this.y) && (y < this.y + this.h)) {
       this.#block.set(`${x - this.x},${y - this.y},${layer}`, block);
-      this.#block.get(`${x - this.x},${y - this.y},${layer}`)?.draw?.(this.#ctx, x, y)
+      this.#block.get(`${x - this.x},${y - this.y},${layer}`)?.draw(this.#ctx, x, y)
     }
   }
 
