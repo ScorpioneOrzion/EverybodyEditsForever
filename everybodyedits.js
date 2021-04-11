@@ -20,8 +20,8 @@ function update() {
   player.update();
   world?.update?.();
 
-  canvas.style.left = -player.position.x * 16 + window.innerWidth / 2 - 8 + "px"
-  canvas.style.top = -player.position.y * 16 + window.innerHeight / 2 - 8 + "px"
+  for (const key in player.view())
+    canvas.style[key] = player.view()[key] + "px"
 }
 
 function loop() {

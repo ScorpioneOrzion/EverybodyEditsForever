@@ -17,4 +17,11 @@ export default class Player {
   setSmiley(smiley) {
     this.smiley = smiley
   }
+
+  view() {
+    return {
+      left: -player.position.x * 16 + window.innerWidth / 2 - 8,
+      top: -player.position.y * 16 + window.innerHeight / 2 - 8
+    }
+  }
 }
