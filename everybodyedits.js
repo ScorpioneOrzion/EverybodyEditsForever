@@ -1,7 +1,7 @@
-import WorldClass from './Classes/worldClass.js';
-import PlayerClass from './Classes/playerClass.js';
-import ImageClass from './Classes/imageHandelerClass.js';
-import BlockClass from './Classes/blockClass.js'
+import PlayerClass from './Classes/player.js';
+import ImageClass from './Classes/imageHandeler.js';
+import World from './Classes/world.js';
+import Block from './Classes/block.js';
 
 /**@type {ImageClass} */
 const images = window[window.randomString].images;
@@ -11,9 +11,9 @@ images.loadImages()
 
 const canvas = document.getElementsByTagName('canvas')[0];
 const ctx = canvas.getContext('2d');
-const world = new WorldClass(100, 100);
-const player = new PlayerClass("");
-const basicGrey = new BlockClass('grey', 0, images.getMod('_'));
+const world = new World(100, 100, canvas);
+const player = new PlayerClass();
+const basicGrey = new Block('grey', 0, images.getMod('_'));
 
 for (let i = 0; i < 100; i++) {
   world.setBlock(i, 0, 0, basicGrey)
@@ -24,29 +24,21 @@ for (let i = 0; i < 100; i++) {
 
 window.world = world
 window.ctx = ctx
-
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-
-ctx.fillStyle = "#000"
+window.player = player
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  world.draw(0, 0, window.innerWidth, window.innerHeight, ctx);
-  ctx.fillRect(0, 0, window.innerWidth, 0)
-  ctx.fillRect(0, 0, 0, window.innerHeight)
-  // ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
-  // ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
   // need to complete player first
+}
+
+function update() {
+  player.update();
+  world?.update?.();
 }
 
 function loop() {
   requestAnimationFrame(loop);
+  update();
   draw();
 }
 
-window.addEventListener('resize', resize);
-resize();
 loop();

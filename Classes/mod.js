@@ -1,4 +1,4 @@
-import imageClass from "./imageClass.js"
+import imageClass from "./image.js"
 
 /**
  * @typedef JSONObject

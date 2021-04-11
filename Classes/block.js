@@ -1,6 +1,6 @@
-import modClass from './modClass.js'
+import modClass from './mod.js'
 
-export default class Mod {
+export default class Block {
   /** @param {String} id @param {number} state @param {modClass} mod */
   constructor(id, state, mod) {
     if (mod instanceof modClass) {
@@ -11,7 +11,7 @@ export default class Mod {
   }
 
   /** @param {number} x @param {number} y @param {CanvasRenderingContext2D} ctx */
-  draw(x, y, ctx) {
+  draw(ctx, x, y) {
     ctx.drawImage(this.imageObject.image, x, y, 16, 16)
   }
 }

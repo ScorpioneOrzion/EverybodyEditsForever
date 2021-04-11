@@ -1,4 +1,4 @@
-import modClass from "./modClass.js"
+import modClass from "./mod.js"
 
 export default class ImageHandeler {
   /** @type {Map<string,modClass>} */
